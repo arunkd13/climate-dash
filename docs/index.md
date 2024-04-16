@@ -29,8 +29,9 @@ for (let i = 0; i < rainfall.time.length; i++) {
 
 ```js
 const overlap = view(Inputs.range([0, 30], { step: 0.1, label: "Overlap" }));
+const smooth = view(Inputs.toggle({ label: "Smooth", value: true }))
 ```
 
 ```js
-ridgeline(data, width, overlap)
+ridgeline(data, width, overlap, smooth)
 ```
