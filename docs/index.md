@@ -3,23 +3,11 @@
 ```js
 import {spiral} from "./components/spiral.js";
 import {ridgeline} from "./components/ridgeline.js";
+import {getDayOfYear} from "./components/dates.js";
 ```
 
 ```js
 const rainfall = FileAttachment("./data/rainfall.json").json();
-```
-
-```js
-let daysInMonth = [30, 31, 28, 31, 30, 31, 30, 31, 30, 31, 30, 31];
-//             J,  F,  M,  A,  M,  J,  J,  A,  S,  O,  N,  D
-let daysBeforeMonth = [0];
-for (let month = 1; month < 12; month++) {
-    daysBeforeMonth[month] = daysBeforeMonth[month - 1] + daysInMonth[month - 1];
-}
-
-function getDayOfYear(month, dayOfMonth) {
-    return dayOfMonth + daysBeforeMonth[month];
-}
 ```
 
 ```js
@@ -40,12 +28,7 @@ for (let i = 0; i < rainfall.time.length; i++) {
 ```
 
 ```js
-display(rainfall)
-display(data)
-```
-
-```js
-const overlap = view(Inputs.range([0, 100], { step: 0.5, label: "Overlap" }));
+const overlap = view(Inputs.range([0, 30], { step: 0.1, label: "Overlap" }));
 ```
 
 ```js
