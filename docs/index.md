@@ -22,6 +22,7 @@ const type = view(Inputs.select(["ridgeline", "stream", "heatmap"], { value: "ri
    <div class="card">
 
 ```js
+const scale = view(Inputs.radio(["linear", "symlog"], { value: "linear", label: "scale" }));
 const overlap = view(Inputs.range([0, 20], { disabled: type != "ridgeline", step: 0.1, label: "Overlap" }));
 const smooth = view(Inputs.toggle({ disabled: type != "ridgeline", label: "Smooth", value: true }));
 ```
@@ -33,14 +34,14 @@ const smooth = view(Inputs.toggle({ disabled: type != "ridgeline", label: "Smoot
 
 ```js
 const graph = new Map([
-    ["ridgeline", (data, width) => ridgeline(data, width, overlap, smooth)],
+    ["ridgeline", (data, width, scale) => ridgeline(data, width, scale, overlap, smooth)],
     ["stream", stream],
     ["heatmap", heatmap]
 ]);
 ```
 
 ```js
-graph.get(type)(data, width)
+graph.get(type)(data, width, scale)
 ```
 
 </div>
