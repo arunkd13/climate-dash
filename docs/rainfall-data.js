@@ -1,8 +1,10 @@
 import {FileAttachment} from "npm:@observablehq/stdlib";
 import {getDayOfYear} from "./components/dates.js";
 
-export async function getRainfallData() {
-    const rainfall = await FileAttachment("./data/rainfall.json").json();
+export async function getRainfallData(location) {
+    let rainfall = (location == "Tindivanam")
+        ? await FileAttachment("./data/rainfall-tindivanam.json").json()
+        : await FileAttachment("./data/rainfall-chennai.json").json();
 
     const data = [];
     for (let i = 0; i < rainfall.time.length; i++) {
