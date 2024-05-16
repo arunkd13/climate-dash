@@ -1,6 +1,12 @@
 # Climate
 
-This is an [Observable Framework](https://observablehq.com/framework) project. To start the local preview server, run:
+These are my experiments at visualizing historical rainfall data in my area. You
+can find the public deployment here:
+https://arunkd13-public.observablehq.cloud/climate/
+
+You can read more about this in [my blog post](https://arunkd13.github.io/blog/visualizing-historical-rainfall-2/)
+
+This is written using the [Observable Framework](https://observablehq.com/framework). To start the local preview server, run:
 
 ```
 npm run dev
