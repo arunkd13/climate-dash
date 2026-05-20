@@ -1,7 +1,7 @@
 
 export async function printData(latitude, longitude) {
     const startDate = "2000-01-01";
-    const endDate = "2026-03-01";
+    const endDate = "2026-05-18";
 
     const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${latitude}&longitude=${longitude}&start_date=${startDate}&end_date=${endDate}&daily=precipitation_sum&timezone=auto`;
 
